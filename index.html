@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gestión de Proyectos · UTPL · Semanas 1 a 4</title>
+  <meta name="description" content="Sitio del curso Gestión de Proyectos (UTPL, octubre 2026): próxima actividad, lecturas, cronograma y contacto con el docente.">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="saltar" href="#principal">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="marco cabecera__fila">
+      <img src="img/logo_utpl.jpg" alt="Universidad Técnica Particular de Loja" class="logo" width="140" height="84">
+      <div>
+        <p class="cabecera__curso" id="curso-meta"></p>
+        <h1 id="curso-nombre">Gestión de Proyectos</h1>
+      </div>
+    </div>
+    <nav class="marco nav" aria-label="Secciones">
+      <a href="#cronograma">Cronograma</a>
+      <a href="#lecturas">Lecturas</a>
+      <a href="#tareas">Mis tareas</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#evaluacion">Evaluación</a>
+    </nav>
+  </header>
+
+  <main id="principal" class="marco">
+
+    <!-- Tarea 1: próxima actividad -->
+    <section class="hoy" aria-labelledby="hoy-titulo">
+      <h2 id="hoy-titulo">Próxima actividad</h2>
+      <div id="proxima" class="hoy__proxima" aria-live="polite"></div>
+      <div class="hoy__acciones">
+        <a class="boton" href="#lecturas" id="ir-lecturas">Buscar una lectura</a>
+        <a class="boton boton--claro" href="#contacto">Contactar al docente</a>
+      </div>
+      <div id="audio-bienvenida"></div>
+    </section>
+
+    <!-- Cronograma tipo Gantt -->
+    <section id="cronograma" aria-labelledby="crono-titulo">
+      <h2 id="crono-titulo">Cronograma · semanas 1 a 4</h2>
+      <nav class="gantt" id="gantt" aria-label="Ir a una semana del cronograma"></nav>
+      <div id="semanas"></div>
+    </section>
+
+    <!-- Tarea 2: localizar una lectura -->
+    <section id="lecturas" aria-labelledby="lect-titulo">
+      <h2 id="lect-titulo">Lecturas</h2>
+      <label for="buscar" class="etiqueta">Busque por título, autor o semana</label>
+      <input id="buscar" type="search" autocomplete="off" placeholder="Ejemplo: PMBOK, semana 2, PRINCE2">
+      <p id="lect-conteo" class="nota" aria-live="polite"></p>
+      <ul id="lista-lecturas" class="lecturas"></ul>
+      <details class="rea">
+        <summary>Recursos educativos abiertos del plan docente</summary>
+        <ul id="lista-rea"></ul>
+      </details>
+    </section>
+
+    <!-- Lista de tareas en el navegador -->
+    <section id="tareas" aria-labelledby="tareas-titulo">
+      <h2 id="tareas-titulo">Mis tareas</h2>
+      <p class="aviso" role="note"><strong>Marcar aquí no entrega la tarea.</strong> Las marcas solo se guardan en este navegador, se pierden si borra los datos del navegador y no crean ningún registro académico. Las entregas se hacen en el EVA.</p>
+      <div id="lista-tareas"></div>
+      <button type="button" class="boton boton--claro" id="reiniciar">Borrar mis marcas</button>
+    </section>
+
+    <!-- Tarea 3: contacto -->
+    <section id="contacto" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo">Contacto con el docente</h2>
+      <div id="datos-contacto" class="contacto"></div>
+    </section>
+
+    <section id="evaluacion" aria-labelledby="eval-titulo">
+      <h2 id="eval-titulo">Evaluación del primer bimestre</h2>
+      <p class="nota">Ponderaciones copiadas del plan docente oficial.</p>
+      <div id="tabla-evaluacion"></div>
+      <h3>Evaluación de recuperación</h3>
+      <p id="recuperacion"></p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="marco">
+      <p id="pie-oficial"></p>
+      <p>Este sitio no recoge datos personales. Versión de datos: <span id="version"></span></p>
+    </div>
+  </footer>
+
+  <script src="datos/silabo.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
